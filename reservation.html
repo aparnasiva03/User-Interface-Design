@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="reserve.css">
+    <script type = "text/javascript">
+    function Redirect() {
+        var x=document.getElementById("da").value;
+        var z=document.getElementById("ph").value;
+        var h=document.getElementById("nam").value;
+        var i=document.getElementById("per").value;
+        if (x === "") {
+              alert("Please enter the Day");
+              return;
+            }
+            if (z === "") {
+              alert("Please enter the phone number.");
+              return;
+            }
+            if(isNaN(z)||z.length<10)
+            {
+                alert("Please enter a valid phone number.");
+                return;
+            }
+            if (h=== "") {
+              alert("Please enter the  Name.");
+              return;
+            }
+            if (i=== "") {
+              alert("Please enter the no of persons.");
+              return;
+            }
+           window.location = "submission.html";
+           }
+           </script>
+</head>
+<body>
+    <section class="banner">
+        <h2>BOOK YOUR TABLE NOW</h2>
+        <div class="card-container">
+            <div class="card-img">
+            </div>
+            <div class="card-content">
+                <h3>Reservation</h3>
+                <form>
+                    <div class="form-row">
+                        <select name="days" id="da">
+                            <option value="day-select">Select Day</option>
+                            <option value="sunday">Sunday</option>
+                            <option value="monday">Monday</option>
+                            <option value="tuesday">Tuesday</option>
+                            <option value="wednesday">wednesday</option>
+                            <option value="thursday">Thursday</option>
+                            <option value="friday">friday</option>
+                            <option value="Saturday">Saturday</option>
+                        </select>
+                         
+                        <select name="hours" id="hr">
+                            <option value="hour-select">Select Hour</option>
+                            <option value="10">10:00</option>
+                            <option value="12">12:00</option>
+                            <option value="tuesday">14:00</option>
+                            <option value="wednesday">16:00</option>
+                            <option value="thursday">18:00</option>
+                            <option value="friday">20:00</option>
+                            <option value="Saturday">22:00</option>
+                        </select>
+                    </div>
+                    <div class="form.row">
+                        <input type="text" id="nam" placeholder="Full name">
+                         <input type="text" id="ph" placeholder="Phone Number">
+                    </div>
+                    <div class="form-row">
+                        <input type="number" id="per" placeholder="No of Persons" min=""1>
+                   <input type= "button" value="BOOK TABLE" onclick = "Redirect();" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

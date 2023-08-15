@@ -1,0 +1,88 @@
+/* Reset default styles */
+html, body, ul, li, h1, h2, p, form, input, textarea {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  font-weight: bolder;
+  line-height: 1.6;
+  background-color: antiquewhite;
+  color:#333;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  background-color:#df9a9a
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+section {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+section h2 {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: #555;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}

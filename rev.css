@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400&display=swap');
+*{
+   margin: 0;
+}
+
+body{
+    background: url(bellas.jpg) center/cover no-repeat;
+    font-family: "Roboto",sans-serif;
+}
+#slider
+{
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container
+{
+  width: 350px; 
+  margin: auto; 
+}
+.subcontainer{
+    width: 85%;
+    margin: auto;
+}
+.controller{
+    display: flex;
+    justify-content: space-between;
+}
+#controls i{
+    color:black;
+    font-size: 1rem;
+}
+.previous, .next{
+padding:2px ;
+width: 30px;
+cursor: pointer;
+border-radius: 50%;
+outline: none;
+transform: 0.7s ease-in-out;
+border: 3px solid rgb(11, 11, 11);
+background-color: rgb(230, 176, 176);
+box-shadow: 0 0 5px #bbb;
+}
+.previous:hover, .next:hover{
+    border: 3px solid blueviolet;
+}
+.slide-img{
+    width: 80%;
+height: 275px;
+border: 1px solid black;
+background-position: center;
+background-size: cover;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+transition: 0.5s;
+}
+.slide-img:hover{
+    box-shadow: 0 0 0 200px rgba(0,0,0,0.9) inset;
+}
+.slide-img a{
+    text-decoration: none;
+    transform: scale(0);
+    transition: 0.8s;
+font-size: 1.5rem;
+color: black;
+opacity: 0;
+}
+.slide-img:hover{
+    opacity: 1;
+    transform: scale(1);
+}
+.img1{
+    background-image: url(man.jpg);
+}
+.img2{
+    background-image: url(wem.jpg);
+}
+.img3{
+    background-image: url(rhi.jpg);
+}
+.img4{
+    background-image: url(men.jpg);
+}
+.img5{
+    background-image: url(women.jpg);
+}
+.textu{
+    color: rgb(21, 10, 10);
+    font-weight: bold;
+}
+.stars
+{
+    color:orange ;
+     font-size: 1.7 rem;
+}

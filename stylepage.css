@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+/* google fonts*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --main-color:rgb(3, 3, 3);
+--second-color:rgba(101, 7, 7, 0.726);
+}
+section{
+    padding: 50px 10%;
+}
+*::selection{
+    color: #fff;
+    background: var(--main-color);
+}
+img{
+    width:100%;
+}
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+z-index: 1000;
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #fff;
+box-shadow: 0 4px 41px rgb(14 55 554/14%);
+padding: 15px 10%;
+transition: 0.2s;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 40px;
+}
+.navbar{
+    display: flex;
+}
+.navbar a {
+    font: 1rem;
+    padding: 11px 20px;
+    color: var(--second-color);
+    font-weight: 600;
+    text-transform:uppercase;
+}
+.navbar a:hover{
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+.home{
+    width:100%;
+    min-height:100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url("actual.jpg");
+    background-repeat:no-repeat;
+    gap: 1rem;
+}
+.home-text{
+    flex: 1  1  17rem;
+}
+
+ .home-text span{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(235, 180, 180);
+ }
+ .home-text h1{
+    font-size: 4rem;
+    color: var(--main-color);
+    font-weight: bolder;
+ }
+ .home-text h2{
+    font-size: 2.5rem;
+    color:rgb(235, 180, 180);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0.5rem 0 1.4rem;
+ }
+ .btn{
+    padding: 7px 16px;
+    border: 2px solid var(--second-color);
+    border-radius: 40px;
+    color:rgb(235, 180, 180);
+    font-weight: 500;
+ }
+ .btn hover{
+    color: #1c1919;
+     background: var(--second-color);
+ }

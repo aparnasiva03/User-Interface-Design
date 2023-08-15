@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: 1fr fr;
+      gap: 10px;
+      color: white;
+      font-weight: bolder;
+      border: 1px;
+      margin:10px;
+      margin-left: 50px;
+      padding:250px;
+      padding-top: 74px;
+      font-size: 25px;
+    }
+
+    .content label {
+      margin-bottom: 5px;
+    }
+
+    .content input[type="text"],
+    .content input[type="number"] {
+      position:absolute;
+      border-bottom: 1px solid white;
+      margin-bottom: 10px;
+      border:solid 1.5px;
+      outline:white;
+      background: rgb(0,0,0,0.2);
+      left:660px;
+      width:300px;
+      color:rgb(216, 168, 97);
+    }
+
+    .content input[type="text"]::placeholder,
+    .content input[type="number"]::placeholder {
+      color: white;
+      text-align: center;
+
+    }
+
+    #b{
+      position:absolute;
+      background-color: #9e6f47;
+      font-family: 'Lucida Cursive';
+      font-size: 17px;
+      color: black;
+      border: none;
+      cursor: pointer;
+      left:478px;
+      width:240px;
+      height:50px;
+      bottom:190px;
+      
+
+    }
+
+    #bg{
+      background-position: center;
+      background-size: cover;
+    }
+
+    #b:hover {
+      background-color: white;
+    }
+
+    #giftCardText {
+      margin-top: 10px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 600px;
+      z-index: -1;
+    }
+
+    #h1{
+      margin-left:80px;
+      
+    }
+
+  </style>
+  <script>
+    function validateEmail(email) {
+      var emailRegex = /\S+@\S+\.\S+/;
+      return emailRegex.test(email);
+    }
+
+    function generateGiftCard() {
+      var recipientName = document.getElementById("recipientName").value;
+      var senderEmail = document.getElementById("senderEmail").value;
+      var senderAddress = document.getElementById("senderAddress").value;
+      var number= document.getElementById("number").value;
+      var pincode = document.getElementById("pincode").value;
+      var receiverName = document.getElementById("receiverName").value;
+      var receiverEmail = document.getElementById("receiverEmail").value;
+      var num = document.getElementById("telephoneNumber").value;
+      var amount = document.getElementById("amount").value;
+
+      if (recipientName === "") {
+        alert("Please enter the sender's name.");
+        return;
+      }
+
+      if (amount === "") {
+        alert("Please enter the payable amount.");
+        return;
+      }
+      if (senderEmail === "") {
+        alert("Please enter the sender's email.");
+        return;
+      }
+      
+      if (!validateEmail(senderEmail)) {
+        alert("Please enter a valid sender's email.");
+        return;
+      }
+      
+      if (senderAddress === "") {
+        alert("Please enter the sender's address.");
+        return;
+      }
+      
+      if (number === "") {
+    
+        alert("Please enter the number.");
+        return;
+      }
+      
+      if (pincode === "") {
+        alert("Please enter the pincode.");
+        return;
+      }
+      
+      if (pincode.length !== 6 && pincode != number) {
+        alert("Please enter a valid 6-digit pincode.");
+        return;
+      }
+      
+      if (receiverName == "") {
+        alert("Please enter the receiver's name.");
+        return;
+      }
+      
+      if (receiverEmail == "") {
+        alert("Please enter the receiver's email.");
+        return;
+      }
+      
+      if (!validateEmail(receiverEmail)) {
+        alert("Please enter a valid receiver's email.");
+        return;
+      }
+      if(isNaN(num)||num.length<10){
+                alert("Please enter the correct phone number.");
+                return;
+            }
+
+      if (parseInt(amount) < 500) {
+        alert("Amount should be at least 100.");
+        return;
+      }
+
+      if (parseInt(amount) > 3000) {
+        alert("Amount should not exceed 3000.");
+        return;
+      }
+
+      var giftCardText = "<strong><span style='color: #274034;'>Dear " + recipientName + ",</span></strong><br><br>";
+      giftCardText += "<strong><span style='color: #274034;'>You have received a hotel gift card worth $" + amount + ".</span></strong><br>";
+      giftCardText += "<strong><span style='color: #274034;'>Enjoy your stay at our hotel!</span></strong><br><br>";
+      giftCardText += "<strong><span style='color: #274034;'>Best regards,</span></strong><br>";
+      giftCardText += "<strong><span style='color: #274034;'>Hotel Management</span></strong>";
+
+
+  
+ 
+
+  document.getElementById("giftCardText").innerHTML = giftCardText;
+      document.getElementById("giftCardText").innerHTML = giftCardText;
+      alert("Gift card generated successfully!");
+    }
+  </script>
+</head>
+<body>
+  <h1 style="text-align: center; color:  #103328; font-size: 39px">Hotel Gift Card</h1>
+  <div class="image-overlay">
+    <img src="e1.jpg" alt="Hotel Image" id="bg" style="width: 100%"height="700">
+  </div>
+  <div class="content">
+    <div>
+      <label for="recipientName">Sender Name:</label>
+      <input type="text" id="recipientName" placeholder=" " required>
+    </div>
+    <div>
+      <label for="amount">Amount:</label>
+      <input type="number" id="amount" placeholder=" " required>
+    </div>
+    <div>
+        <label for="senderEmail">Sender's Email:</label>
+        <input type="text" id="senderEmail" placeholder=" " required>
+      </div>
+      <div>
+        <label for="senderAddress">Address:</label>
+        <input type="text" id="senderAddress" placeholder=" " required>
+      </div>
+      <div>
+        <label for="number">Number of cards:</label>
+        <input type="number" id="number" required>
+      </div>
+      <div>
+        <label for="pincode">Pincode:</label>
+        <input type="number" id="pincode" required>
+      </div>
+      <div>
+        <label for="receiverName">Receiver's Name:</label>
+        <input type="text" id="receiverName" placeholder=" " required>
+      </div>
+      <div>
+        <label for="receiverEmail">Receiver's Email:</label>
+        <input type="text" id="receiverEmail" placeholder=" " required>
+      </div>
+      <div>
+        <label for="telephoneNumber">Telephone Number:</label>
+        <input type="number" id="telephoneNumber">
+      </div>
+
+    </div>
+      <button onclick="generateGiftCard()" id="b">Generate Gift Card</button>
+  </div>
+
+  <div id="giftCardText" class="white-bold"></div>
+</body>
+</html>

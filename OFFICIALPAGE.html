@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" 
+referrerpolicy="no-referrrer"> </script>
+
+
+
+<style>
+    body{
+        background: #544e48;
+        background-repeat: no repeat;
+        background-position: center;
+        background-size:cover;
+
+    }
+    .grid{
+        display:grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-gap:30px;
+
+
+    }
+    
+    input{
+    outline:none;
+    border:none;
+    width:100%;
+    }
+    
+    .book{
+    position: absolute;
+    top:10px;
+    left:50px;
+    align-items: center;
+    padding:40px 0;
+    background:#1a2849;
+    color: white;
+    }
+    
+    h1{
+    font-family:serif;
+    }
+    
+    .book h1{
+    font-size:28px;
+    }
+    
+    .book h1 span{
+    color: white;
+    font-size: 16px;
+    }
+    
+    .book input{
+    padding:20px;
+    }
+    
+    .book input:nth-last-child(1){
+    background:#423e3a;
+    color: white;
+    border-radius: 25px;
+    }
+    
+    .counter{
+    position: absolute;
+    top: 600px;
+    background-image: url(room1r.jpg);  
+    background-size: cover;
+    background-repeat: no repeat;
+    height: 35vh;
+    width: 1300px;
+    color: white;
+    margin-left:175px;
+    text-align: center;
+    }
+    
+    .counter .grid{
+    position:absolute;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+    place-items: center;
+    padding-top: 60px;
+    margin-left:5px;
+    }
+    
+    .counter h1{
+    font-size: 50px;
+    }
+    
+    .counter hr{
+    position: absolute;
+    width: 10%;
+    margin-left:20px;
+    bottom:20px;
+    background: darkblue;
+    height: 3px;
+    border: none;
+    }
+    
+    
+    
+    .text i{
+    color: yellow;
+    }
+    
+    .rooms{
+        position: relative;
+
+    }
+
+    .rooms .text{
+        border: 1px solid rgba(0,0,0);
+        border-top: none;
+        padding: 30px;
+
+    }
+
+    
+    .rooms p{
+    margin: 20px 0;
+    opacity:0.7;
+    }
+    
+    .rooms h3{
+    font-size: 30px;
+    line-height: 20px;
+    margin-left: 20px;
+    font-weight: 500;
+    color: darkblue;
+    }
+    
+        
+    .owl-nav .owl-prev i,
+    .owl-nav .owl-next i{
+    color: cream;
+
+}
+
+.owl-nav .owl-prev{
+    left: 90%;
+
+}
+
+.owl-nav .owl-next{
+    right: 0;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  text-align: center;
+}
+
+.button {
+  margin-top: 10px;
+}
+
+body{
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        background: whitesmoke;
+        
+    }
+
+    .container{
+        display: flex;
+
+    }
+
+    .card{
+        height: 240px;
+        margin: 10px;
+        box-shadow: 5px 5px 20px black;
+        overflow: hidden;
+
+
+    }
+
+
+    img{
+        height: 240px;
+        width: 320px;
+        border-radius: 3px;
+    }
+
+    .intro{
+        height: 330px;
+        width:  320px;
+        padding: 6px;
+        box-sizing: border-box;
+        position: absolute;
+        background: transparent;
+        color: black;
+        bottom: 150px;
+        transition: .5s;
+
+
+
+    }
+
+    h1{
+       margin: 10px;
+       font-size: 27px;
+       text-align: center;
+       font-family: 'Times New Roman';
+
+    }
+
+    h4{
+        position: relative;
+        top:39px;
+        text-align: center;
+        font-size:19px;
+    }
+
+    p{
+        font-size: 30px;
+        margin:20px;
+        visibility: hidden;
+        opacity: 0;
+        
+
+    }
+
+    span{
+        font-weight: bold;
+
+
+    }
+
+    .card:hover{
+        cursor: pointer;
+
+
+    }
+
+    .card:hover .intro {
+        height: 150px;
+        bottom: 175px;
+        background: black;
+        opacity: 0.6;
+
+
+
+    }
+
+    .card:hover p{
+        opacity:1;
+        visibility: visible;
+        color: white;
+        font-family:'Arial';
+    }
+
+    .card:hover img{
+        transform: scale(1.1) rotate(-8deg)
+    }
+
+
+</style>
+
+<body>
+    <section class="book">
+        <div class="container flex_space">
+            <div class="text">
+                <h1> <span style="font-style: italic;color: #c0c0c0; font-size:28px;"> Book Your Rooms  </span> </h1>
+            </div>
+            <div class="form">
+                <form action ="rm.html"class="grid">
+                    <input type="date" placeholder="Arrival Date"  required>
+                    <input type="date" placeholder="Departure Date"  required>  
+                    <input type="number" placeholder="Adults" required>
+                    <input type="number" placeholder="Children"  required>
+                    <input type="submit"  value="BOOK NOW" placeholder="book now"  required>
+             </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+            <div class="card">
+                <img src="R3.jpg" alt=" ">
+                <div class="intro">
+                    <h4 style="text-align: center;"> DORSET ROOM </h4>
+                    <p style="font-style:initial;font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                    Introducing the new and well-appointed Dorsett Room.Tastefully designed with warm earthy tones.This room offers all the comforts of a home
+                </p>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <img src="R1.jpg" alt=" ">
+                <div class="intro">
+                    <h4 style="text-align: center;">DELUXE ROOM</h4>
+                    <p style="font-style:initial;font-family:'Times New Roman', Times, serif; font-size: 20px;"> stylishly designed the Deluxe Room comes with modern comforts such as working area and plush bed </p>
+                </div>
+
+            </div>
+
+            <div class="card">
+                <img src="R2.jpg" alt=" ">
+                <div class="intro">
+                    <h4 style="text-align: center;">  SUITE ROOM</h4>
+                    <p style="font-style:initial;font-family: 'Times New Roman', Times, serif; font-size: 20px;"> stylishly designed the Deluxe Room comes with modern comforts such as living room and dining hall </p>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"> </script> 
+
+    <section class="counter top">
+        <div class="container grid">
+            <div class="box">
+                <h1> 3550  &emsp;&emsp;&emsp;&emsp;</h1>
+                <hr> 
+                <span> Customers </span>
+            </div>
+            <div class="box">
+                <h1> 2500 &emsp;&emsp;&emsp;</h1>
+                <hr>
+                <span> Happy Customers </span>
+
+            </div>
+
+            <div class="box">
+                <h1> 150 &emsp;&emsp;&emsp;</h1>
+                <hr>
+                <span> Expert Technicians</span>
+
+            </div>
+
+            <div class="box">
+                <h1> 4000&emsp;&emsp;&emsp; </h1>
+                <hr>
+                <span> Desktop Reaired</span>
+
+            </div>
+            
+        </div>
+    </section>
+
+
+    <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+
+    
+
+</body>
+
+
+    
+</html>

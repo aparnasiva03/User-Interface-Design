@@ -1,0 +1,186 @@
+<html>
+    <head>
+        <title>sign in</title>
+        <style>
+        body {background-image:url(h3.jpg);font-family:Helvetica, sans-serif;height: 130%;width: 95%;background-repeat: no-repeat;background-size: 100% 100%;color: aliceblue;backdrop-filter:inherit;}
+        #box{background-color: rgba(154, 161, 231, 0.7);margin:50px 200px 100px 300px;padding: 0px 30px;}
+        #txt{width: 230px;height: 30px; border: 0px;border-bottom: 2px solid white;background: transparent;color: white;font-size: 16;}
+        #add{height: 30px;border: 0px;border-bottom: 2px solid white;background: transparent;color: white;font-size: 16;}
+        input[type="text"]::-webkit-input-placeholder{color: rgb(214, 208, 208);}
+        </style>
+    </head>
+    <body>
+        <div id="box">
+            <br>
+            <p style="margin-left:880px;"><a href="signin.html"><img src="close.png" width="20px" height="20px"></a></p>
+            <form name="myform">
+                <table cellspacing="30px">
+                    <tr>
+                    <td><p style="font-size: 18;">Name(*)</p><p id="msg1" style="color: red;font-size: 12;"></p></td><td>:</td>
+                    <td><input type="text" id="txt" name="txt1" placeholder="First Name" maxlength="30"></td>
+                    <td><input type="text" id="txt" name="txt2" placeholder="Last Name" maxlength="30"></td>
+                </tr>
+                <tr>
+                    <td><p style="font-size: 18;">Email ID(*)</p><p id="msg2" style="color: red;font-size: 12;"></p></td><td>:</td>
+                    <td><input type="text" id="txt" name="txt3" placeholder="Email"> </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><p style="font-size: 18;">Password(*)</p><p id="msg3" style="color: red;font-size: 12;"></p></td><td>:</td>
+                    <td><input type="text" id="txt" name="txt4"> </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><p style="font-size: 18;">Confirm Password(*)</p><p id="msg4" style="color: red;font-size: 12;"></p></td><td>:</td>
+                    <td><input type="password" id="txt" name="txt5"> </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><p style="font-size: 18;">Address(*)</p><p id="msg5" style="color: red;font-size: 12;"></p></td><td>:</td>
+                    <td><input type="text" id="txt" name="txt6" placeholder="H.No" style="width: 60px; ">&emsp;
+                        <input type="text" id="txt" name="txt7" style="width: 150px; " placeholder="House Name"></td>
+                    <td>
+                    <input type="text" id="txt" name="txt8" placeholder="Street/Apartment" ></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td><input type="text" id="txt" name="txt9" placeholder="City"></td><td>
+                        <input type="text" id="txt" name="txt10" placeholder="Zip Code" maxlength="6"></td>
+                </tr> 
+                <tr>
+                    <td><p style="font-size: 18;">Mobile Number(*)</p><p id="msg6" style="color: red;font-size: 12;"></p></td><td>:</td>
+                    <td><input type="text" id="txt" style="width: 50px;" name="txt11" value="+010" maxlength="4" size="4">&emsp;
+                        <input type="text" id="txt" name="txt12" placeholder="Phone No" style="width: 160px;" maxlength="10" size="10"> </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><p style="font-size: 18;">Gender<td>:</td></p></td>
+                    <td><p style="font-size: 18;"><input type="radio" name="r1" value="M"> Male 
+                    <input type="radio" name="r1" value="F" > Female</p></td>
+                </tr>
+                <tr><td><p style="font-size: 18;">Birthday<td>:</td></p></td>
+                <td>
+                    <input type="date" id="txt">
+                </td></tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="SUBMIT" style="width: 200px; height: 40px; background-color: white; color: rgb(124, 18, 230); 
+                        border: 3px solid white;font-size: 16;" onclick="validate(event)">
+                    </td>
+                    <td>
+                        <input type="reset" value="CLEAR" style="width: 200px; height: 40px; background-color: white; color: rgb(124, 18, 230); 
+                        border: 3px solid white;font-size: 16;">
+                    </td>
+                </tr>
+                </table>
+            </form>
+        </div>
+        <script>
+            function validate(event)
+            {
+                event.preventDefault();
+                var v1=document.myform.txt1.value;
+                var v2=document.myform.txt2.value;
+                var v3=document.myform.txt3.value;
+                var v4=document.myform.txt4.value;
+                var v5=document.myform.txt5.value;
+                var v6=document.myform.txt6.value;
+                var v7=document.myform.txt7.value;
+                var v8=document.myform.txt8.value;
+                var v9=document.myform.txt9.value;
+                var v10=document.myform.txt10.value;
+                var v11=document.myform.txt11.value;
+                var v12=document.myform.txt12.value;
+                var flag=0;
+                if (v1==""||v2=="")
+                {
+                    flag=1;
+                    document.getElementById("msg1").innerHTML="Full Name is required";
+                }
+                atpos = v3.indexOf("@");
+                dotpos = v3.lastIndexOf(".com");
+                if (atpos==-1||dotpos==-1)
+                {
+                    flag=1;
+                    document.getElementById("msg2").innerHTML="Invalid email id";
+
+                }
+                else if (atpos < 1 || ( (dotpos - atpos) < 4 )) 
+                {
+                    flag=1;
+                    document.getElementById("msg2").innerHTML="Invalid email id";
+                }
+                if (v4.length<6||v4.length>8)
+                {
+                    flag=1;
+                    document.getElementById("msg3").innerHTML="Password should be between 6-8 charcters";
+                }
+                if (v5=="")
+                {
+                    flag=1;
+                    document.getElementById("msg4").innerHTML="Please confirm the password";
+                }
+                else if (v4!=v5)
+                {
+                    flag=1;
+                    document.getElementById("msg4").innerHTML="Password not same";
+                }
+                if (v6==""||v7==""||v8==""||v9==""||v10=="")
+                {
+                    flag=1;
+                    document.getElementById("msg5").innerHTML="Please provide complete address";
+                }
+                else 
+                {
+                    if(isNaN(v10))
+                {
+                    flag=1;
+                    document.getElementById("msg5").innerHTML="Zip Code should be number";
+                }
+                else if (isNaN(v6))
+                {
+                    flag=1;
+                    document.getElementById("msg5").innerHTML="Housr number should be number";
+                }
+                else if (v10.length<6)
+                {
+                    flag=1;
+                    document.getElementById("msg5").innerHTML="Invalid Zip Code";
+
+                }
+                }
+                if (v11==""||v12=="")
+                {
+                    flag=1;
+                    document.getElementById("msg6").innerHTML="Please provide mobile number with country code";
+                }
+                else 
+                {
+                    if(isNaN(v11))
+                {
+                    flag=1;
+                    document.getElementById("msg6").innerHTML="Country Code should be number";
+                }
+                    else if(isNaN(v12))
+                {
+                    flag=1;
+                    document.getElementById("msg6").innerHTML="Phone number should be number";
+                }
+                    else if(v12.length<10)
+                    {
+                        flag=1;
+                    document.getElementById("msg6").innerHTML="Not a valid mobile number";   
+                    }
+                }
+                if (flag==0)
+                {
+                    document.write("Welcome "+(v1+" "+v2)+" to Blue Moon family");
+                }
+
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Catering Services</title>
+  <link rel="stylesheet" href="catering style.css">
+   <script type = "text/javascript">
+     function validateEmail(y) {
+      var emailRegex = /\S+@\S+\.\S+/;
+      return emailRegex.test(y);
+    }
+function Redirect() {
+  var x=document.getElementById("name").value;
+  var y=document.getElementById("email").value;
+  var z=document.getElementById("phone").value;
+  var h=document.getElementById("eventdate").value;
+  var i=document.getElementById("address").value;
+  var j=document.getElementById("eventbud").value;
+  var a=document.getElementById("occ").value;
+  var b=document.getElementById("gues").value;
+  var c=document.getElementById("ty").value;
+  if (x === "") {
+        alert("Please enter the sender's name.");
+        return;
+      }
+      if (y=== "") {
+        alert("Please enter the email.");
+        return;
+      }
+      if (z === "") {
+        alert("Please enter the phone number.");
+        return;
+      }
+      if(isNaN(z)||z.length<10)
+            {
+                alert("Please enter a valid phone number.");
+                return;
+            }
+      if (i=== "") {
+        alert("Please enter the  address.");
+        return;
+      }
+      if (h=== "") {
+        alert("Please enter the event date.");
+        return;
+      }
+      if (j === "") {
+        alert("Please enter the event budget.");
+        return;
+      }
+      if (a=== "") {
+        alert("Please enter the  occassion.");
+        return;
+      }
+      if (b=== "") {
+        alert("Please enter the no of guests.");
+        return;
+      }
+      if (c === "") {
+        alert("Please enter the event type.");
+        return;
+      }
+      if (!validateEmail(y)) {
+        alert("Please enter a valid receiver's email.");
+        return;
+      }
+
+     window.location = "submission_11.html";
+     }
+     </script>
+    
+</head>
+<body>
+  <header>
+    <h1>Catering </h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#menus">Menus</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to our hotel catering services page. We specialize in providing exquisite culinary experiences for your events and occasions. Our team of skilled chefs and staff are dedicated to delivering exceptional service and delectable meals that will delight your guests.</p>
+  </section>
+
+  <section id="menus">
+    <h2>Menus</h2>
+    <p>Explore our carefully crafted menus tailored to suit a variety of events:</p>
+    <ul>
+      <li>Breakfast Menu</li>
+      <li>Lunch Menu</li>
+      <li>Dinner Menu</li>
+      <li>Wedding Menu</li>
+      <li>Corporate Event Menu</li>
+    </ul>
+    <p>Contact our catering team for customized menu options.</p>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <ul>
+      <li>Full-service event planning</li>
+      <li>Professional waitstaff</li>
+      <li>Table setup and decor</li>
+      <li>Bar services</li>
+      <li>Customized menu planning</li>
+      <li>Special dietary accommodations</li>
+      <li>Event coordination</li>
+    </ul>
+    <p>Our experienced team will ensure that every detail of your event is meticulously planned and executed.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Please fill out the form below and we'll do our best to accommodate your desired date and any requests you may have to make your party/celebration memorable.</p>
+    <form method="POST">
+ <input type="text" id="name" style="width: 400px;" name="name" placeholder="Name"  required>
+      <br/>
+       <input type="email" id="email" style="width: 400px;" name="email" placeholder="Email.."required>
+       <br/>
+       <input type="tel" id="phone" style="width: 400px;" placeholder="Phone..." name="phone">
+       <br/>
+       <input type="checkbox" name="po">I'd like to get texts about specials, events, and other exclusive offers and announcements not available to the general public
+     <br/>
+    <select name="select" id="gues">
+<option>No of Guests</option>
+        <option >1-10 people</option>
+        <option >20-30 people</option>
+        <option >30-40 people</option>
+        <option >40-50 people</option>
+        <option >50-70 people</option>
+        <option >70-100 people</option>
+        <option >>100 people</option>
+        <option>>200 people</option>
+</select>
+<br/>
+     <input type="date" id="eventdate" name="event_date" required>
+    <br/>
+     <select name="occasion" id="occ">
+         <option>Select Occasion</option>
+        <option >Birthday</option>
+        <option >Graduation</option>
+        <option >Anniversary</option>
+        <option >Holiday Party</option>
+        <option >Baby Shower</option>
+        <option >Bridal Shower</option>
+        <option >Marriage</option>
+        <option >Retirement</option>
+        <option >Anniversary</option>
+        <option >Family Reunion</option>
+        <option >Bachelor Party</option>
+        <option >Bachelorette Party</option>
+        <option >Corporate Function</option>
+        <option >Other</option>
+</select>
+<br/>
+<select name="typeofcat" id="ty">
+    <option>Select Type Of Catering Service</option>
+   <option >Pick-up</option>
+   <option >Delivery</option>
+   <option >Fully Staffed</option>
+   </select>
+   <textarea id="address" name="evendetails" rows="4" placeholder="Address...." required></textarea>
+<br/>
+Budget Per Person<textarea id="eventbud" name="event_details" rows="1" style="width: 100px;" required>$65</textarea>
+<br/>
+<textarea id="event_details" name="event_details" rows="4" placeholder="Description/Requests(optional)" required></textarea>
+ <input type = "button" value = "Submit" onclick = "Redirect();" />
+</form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Hotel Catering Services. All rights reserved.</p>
+  </footer>
+</body>
+</html>

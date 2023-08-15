@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+ body {
+ margin: 0;
+ padding: 0;
+ position: relative;
+ }
+ .container {
+ display: grid;
+ grid-template-columns: 1fr fr;
+ gap: 10px;
+ background-color:rgba(0, 0, 0, 0.5);
+ color: white;
+ border: 1px solid #fff;
+ margin:10px;
+ margin-left: 8px;
+ padding:5px;
+ }
+
+ .container label {
+ margin-bottom: 5px;
+ }
+
+ .container input[type="text"] {
+ border-bottom: 1px solid white;
+ padding: 5px;
+ margin-bottom: 10px;
+ border:solid 5px;
+ outline:black;
+ background: transparent;
+ margin-left:8px;
+ width:300px;
+ color:burlywood;
+ }
+
+ .container input[type="text"]::placeholder,
+ .container input[type="number"]::placeholder {
+ color: burlywood;
+ }
+
+ .container button {
+ background-color: white;
+ color: black;
+ padding: 10px;
+ border: none;
+ cursor: pointer;
+ }
+
+ .container button:hover {
+ background-color:burlywood;
+ }
+
+ .image-overlay {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 600px;
+ z-index: -1;
+ }
+ 
+ </style>
+ <title>Hiring Employee</title>
+ <script>
+ function validateEmail(email) {
+ var emailRegex = /\S+@\S+\.\S+/;
+ return emailRegex.test(email);
+ }
+ function Hiring() {
+ var Name = document.getElementById("Name").value;
+ var email = document.getElementById("email").value;
+ var Address = document.getElementById("Address").value;
+ var phonenum = document.getElementById("phonenumber").value;
+ var resume = document.getElementById("resume").value;
+ var position = document.getElementById("position").value;
+ if (Name == "") {
+ alert("Please enter your name.");
+ return;
+ }
+ 
+ if (email == "") {
+ alert("Please enter the email.");
+ return;
+ }
+ 
+ if (!validateEmail(email)) {
+ alert("Please enter a valid emailID.");
+ return;
+ }
+ 
+ if (Address == "") {
+ alert("Please enter your address.");
+ return;
+ }
+ 
+ if (phonenum == "") {
+ alert("Please enter the contact number.");
+ return;
+ }
+ if(isNaN(phonenum)||phonenum.length<10)
+ {
+ alert("Please enter the correct phone number.");
+ return;
+ }
+ if(position==""){
+ alert("Select a position you want to apply")
+ }
+ if (resume == "") {
+ alert("Upload your resume.");
+ return;
+ }
+ window.location ="submission.html";
+ }
+</script>
+</head>
+<body>
+ <h1><center>APPLICATION</center></h1>
+ <div class="image-overlay">
+ <img src="21.jpg" alt="Hotel Image" style="width: 100%" height="500">
+ </div>
+ <div class="container">
+ <div>
+ <center><label for="Name">Name:</label></center>
+ <center><input type="text" id="Name" placeholder="Enter name" required></center>
+ </div>
+ <div>
+ <center><label for="email">Email:</label></center>
+ <center><input type="text" id="email" placeholder="Enter email" required></center>
+ </div>
+ <div>
+ <center><label for="Address">Address:</label></center>
+ <center><input type="text" id="Address" placeholder="Enter your address" required></center>
+ </div>
+ <div>
+ <center><label for="phonenumber">Phone Number:</label></center>
+ <center><input type="text" id="phonenumber" placeholder="Enter your phone number" required></center>
+ </div>
+ <div>
+ <center><label for="position">Position:</label></center>
+ <center><select id="position" name="position" required>
+ <option value="">Select a position</option>
+ <option value="position1"> Desk Receptionist</option>
+ <option value="position2">Chef/Cook</option>
+ <option value="position3">Maintenance Technician</option>
+ <option value="position4">Concierge</option>
+ <option value="position5">Housekeeping Supervisor</option>
+ <option value="position6">Housekeeping staff</option>
+ <option value="position7">Sales and Marketing Staff</option>
+ </center></select>
+ <div>
+ <center><label for="resume">Resume</label></center>
+ <center><input type="file" id="resume" name="resume" required></center>
+ </div> 
+ <div>
+ <center><button type="button" onclick="Hiring()" value="APPLY">APPLY</button></center>
+ </div>
+</body>
+</html>
+

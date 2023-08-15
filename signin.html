@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>sign in</title>
+        <style>
+        body {background-image:url(h3.jpg);font-family:'Times New Roman';height: 70%;width: 90%;background-repeat: no-repeat;background-size: 100% 100%;color: aliceblue;}
+        #box{background-color: rgba(154, 161, 231, 0.7);margin:100px 350px 300px 550px;padding: 10px 40px;}
+        #txt{width: 370px;height: 30px; border: 0px;border-bottom: 2px solid white;background: transparent;color: white;font-size: 20;}
+        </style>
+    </head>
+    <body>
+        <div id="box">
+
+            <p style="margin-left:400px;"><a href="pro_trail3.html"><img src="close.png" width="20px" height="20px"></a></p>
+            <p style="font-size: 35; text-align: center;">Sign In</p>
+            <form name="myform">
+                <p style="font-size: 23;"><img src="email1.png" width="35px" height="20px"> Email:</p>
+                <input type="text" id="txt" name="txt1"> 
+                <p id="msg" style="color: red;"></p>
+                <p style="font-size: 22;"><img src="pass.jpg" width="35px" height="30px"style="background:transparent"> Password:</p>
+                <input type="password" id="txt" name="txt2"> 
+                <p id="msg2" style="color: red;"></p>
+                <br><br>
+                <p style="font-size: 18; word-spacing: 110px;"><input type="checkbox" name="ch" checked>Remember&ensp;Me <a href="login.html">Forgot&ensp;Password?</a></p>
+                <br>
+                <input type="button" value="LOGIN" style="background-color:rgb(34, 3, 60); border-radius: 25px; color: white; 
+                height: 60px; width: 370px;border: 0px;font-size: 22;" onclick="validate()">
+                <p style="font-size: 18; text-align: center;">Not a member? <a href="login.html">Sign Up</a></p>
+            </form>
+        </div>
+        <script>
+            var v1=window.prompt("Enter a email",'0');
+            var v2=window.prompt("Enter a password",'0');
+            function validate()
+            {
+                var mailid = document.myform.txt1.value;
+                var passwd=document.myform.txt2.value;
+                atpos = mailid.indexOf("@");
+                dotpos = mailid.lastIndexOf(".com");
+                if (atpos==-1||dotpos==-1)
+                {document.getElementById("msg").innerHTML="Invalid email id";
+
+                }
+                else if (atpos < 1 || ( (dotpos - atpos) < 4 )) 
+                {
+                    document.getElementById("msg").innerHTML="Invalid email id";
+                }
+                else
+                {
+                    var flag=0;
+                    if (mailid!=v1)
+                {
+                    flag=1;
+                    document.getElementById("msg").innerHTML="Incorrect email id";
+                }
+                    if (passwd!=v2)
+                {
+                    flag=1;
+                    document.getElementById("msg2").innerHTML="Incorrect password";
+                }
+                    if (flag==0)
+                    document.write("LOGIN COMPLETED SUCCESSFULLY");
+                }
+            }
+
+        </script>
+    </body>
+</html>
